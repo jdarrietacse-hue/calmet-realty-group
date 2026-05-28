@@ -1,36 +1,20 @@
-// ===== LOCATION DATA =====
-const CITIES = {
-  georgia: { name:'Georgia', video:'assets/georgia.mp4', img:'1600596542815-ffad4c1539a9' },
-  florida: { name:'Florida', video:'assets/florida.mp4', img:'1512917774080-9991f1c4c750' },
-};
-
 // ===== ELEMENTS =====
-const video    = document.getElementById('bgVideo');
-const heroCity = document.getElementById('heroCity');
-const locRail  = document.getElementById('locRail');
-const aboutImg = document.getElementById('aboutImg');
+const video   = document.getElementById('bgVideo');
+const locRail = document.getElementById('locRail');
 
-// ===== LOCATION SWITCHER (changes hero video + name + story image) =====
-function switchCity(key) {
-  const c = CITIES[key];
-  if (!c) return;
-  const source = video.querySelector('source');
-  if (source.getAttribute('src') !== c.video) {
-    video.style.opacity = '0';
-    setTimeout(() => {
-      source.setAttribute('src', c.video);
-      video.load(); video.play().catch(() => {});
-      video.style.opacity = '1';
-    }, 300);
-  }
-  heroCity.style.opacity = '0';
-  setTimeout(() => { heroCity.textContent = c.name; heroCity.style.opacity = '1'; }, 250);
-  aboutImg.src = `https://images.unsplash.com/photo-${c.img}?auto=format&fit=crop&w=900&q=80`;
+// ===== LOCATION RAIL (un solo video que se repite; las ubicaciones solo resaltan y bajan a la oficina) =====
+function selectCity(key) {
   locRail.querySelectorAll('li').forEach(li => li.classList.toggle('active', li.dataset.city === key));
 }
-locRail.querySelectorAll('li').forEach(li => li.addEventListener('click', () => switchCity(li.dataset.city)));
+locRail.querySelectorAll('li').forEach(li => li.addEventListener('click', () => {
+  selectCity(li.dataset.city);
+  document.getElementById('office').scrollIntoView({ behavior: 'smooth' });
+}));
 document.querySelectorAll('.overlay-offices a').forEach(a =>
-  a.addEventListener('click', e => { e.preventDefault(); switchCity(a.dataset.city); closeOverlay(); }));
+  a.addEventListener('click', e => {
+    e.preventDefault(); selectCity(a.dataset.city); closeOverlay();
+    document.getElementById('office').scrollIntoView({ behavior: 'smooth' });
+  }));
 
 // ===== VOLUME =====
 const volBtn = document.getElementById('volBtn'), volIcon = document.getElementById('volIcon');
