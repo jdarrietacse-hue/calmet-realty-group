@@ -50,13 +50,21 @@ svg{width:18px;height:18px;fill:currentColor}
 .bar-contact{display:flex;align-items:center;gap:12px;font-size:.78rem;letter-spacing:.1em;color:rgba(255,255,255,.85)}
 .bar-contact a:hover{color:var(--gold)}
 .bar-contact .dot{color:var(--gold)}
-.brand{position:absolute;left:50%;top:14px;transform:translateX(-50%);display:block}
-.brand img{height:104px;width:auto;animation:logoGlow 3.6s ease-in-out infinite;
-  filter:drop-shadow(0 0 16px rgba(201,163,78,.5)) drop-shadow(0 4px 16px rgba(0,0,0,.55))}
-@keyframes logoGlow{
-  0%,100%{filter:drop-shadow(0 0 12px rgba(201,163,78,.4)) drop-shadow(0 4px 16px rgba(0,0,0,.55))}
-  50%{filter:drop-shadow(0 0 26px rgba(230,200,120,.85)) drop-shadow(0 4px 16px rgba(0,0,0,.55))}
-}
+.brand{position:absolute;left:50%;top:14px;transform:translateX(-50%);display:block;line-height:0}
+/* sombra oscura suave detrás para que el dorado siempre contraste con el video */
+.brand::before{content:"";position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:150%;height:170%;border-radius:50%;z-index:-1;
+  background:radial-gradient(ellipse at center, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 45%, transparent 72%)}
+.brand img{height:110px;width:auto;display:block;
+  filter:drop-shadow(0 0 18px rgba(201,163,78,.55)) drop-shadow(0 4px 16px rgba(0,0,0,.6))}
+/* destello dorado que recorre el logo (recortado a la forma del logo) */
+.brand::after{content:"";position:absolute;inset:0;pointer-events:none;
+  -webkit-mask:url(assets/logo.png) center/contain no-repeat;
+  mask:url(assets/logo.png) center/contain no-repeat;
+  background:linear-gradient(110deg,transparent 38%,rgba(255,248,225,.95) 50%,transparent 62%);
+  background-size:260% 100%;background-repeat:no-repeat;
+  animation:logoShine 4s ease-in-out infinite}
+@keyframes logoShine{0%{background-position:200% 0}55%,100%{background-position:-120% 0}}
 .menu-btn{display:flex;align-items:center;gap:12px;background:none;border:none;color:#fff;cursor:pointer;font-family:var(--cond);font-size:1rem;letter-spacing:.28em;text-transform:uppercase;margin-left:auto}
 .menu-bars{display:flex;flex-direction:column;gap:5px;width:28px}
 .menu-bars i{height:2px;width:100%;background:#fff;transition:.3s}
