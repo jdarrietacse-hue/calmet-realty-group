@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calmet Realty Group | Georgia</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Barlow+Condensed:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-loc="georgia">
+
+  <header class="site-header" id="siteHeader">
+    <div class="site-header-inner">
+      <a href="index.html" class="sh-brand"><img src="assets/logo.png" alt="Calmet Realty Group" /></a>
+      <button class="menu-btn dark" id="menuBtnTop" aria-label="Menú"><span class="menu-bars"><i></i><i></i><i></i></span><span class="menu-label">Menú</span></button>
+    </div>
+  </header>
+
+  <main class="hero" id="top">
+    <video class="hero-video" id="bgVideo" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1920&q=80">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-scrim"></div>
+
+    <header class="bar">
+      <div class="bar-contact"><a href="index.html">← Inicio</a></div>
+      <a href="index.html" class="brand"><img src="assets/logo.png" alt="Calmet Realty Group" /></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menú"><span class="menu-bars"><i></i><i></i><i></i></span><span class="menu-label">Menú</span></button>
+    </header>
+
+    <ul class="social-rail">
+      <li><a href="https://www.instagram.com/calmetrealtygroup/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2z"/></svg></a></li>
+      <li><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.1v12.2a2.5 2.5 0 1 1-2.5-2.5c.26 0 .5.04.74.11V9.66a5.6 5.6 0 0 0-.74-.05A5.66 5.66 0 1 0 15.6 15.3V9.13a7.34 7.34 0 0 0 4.3 1.37V7.4a4.3 4.3 0 0 1-3.3-1.58z"/></svg></a></li>
+      <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a></li>
+    </ul>
+
+    <ul class="loc-rail" id="locRail">
+      <li class="active" data-city="georgia">Georgia</li>
+      <li class="" data-city="florida">Florida</li>
+      <li class="" data-city="dubai">Dubai</li>
+    </ul>
+
+    <div class="loc-hero-title">
+      <p class="loc-hero-eyebrow">CALMET REALTY GROUP</p>
+      <h1>Georgia</h1>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#listings" class="gbtn">Propiedades <i>＋</i></a>
+      <a href="#contact" class="gbtn">Contacto <i>＋</i></a>
+    </div>
+
+    <button class="vol" id="volBtn" aria-label="Sonido"><span id="volIcon">🔇</span></button>
+  </main>
+
+  <section class="about" id="intro">
+    <div class="about-monogram">CR</div>
+    <div class="loc-intro">
+      <h2 class="site-title center"><strong>Georgia</strong></h2>
+      <p>Nuestra sede principal. Desde Atlanta y Norcross acompañamos a las familias a comprar su primera casa, invertir y construir patrimonio en todo el estado de Georgia.</p>
+    </div>
+  </section>
+
+  <section class="listings" id="listings">
+    <h2 class="site-title center">Propiedades en <strong>Georgia</strong></h2>
+    <div class="cards" id="cards"></div>
+    <div class="center"><a href="#contact" class="gbtn dark">Solicitar información <i>＋</i></a></div>
+  </section>
+
+  <section class="git" id="contact">
+    <div class="git-inner">
+      <h2 class="site-title center light">Conectemos en <strong>Georgia</strong></h2>
+      <p class="git-sub">Cuéntanos qué buscas y te contactaremos muy pronto.</p>
+      <form class="git-form" id="gitForm">
+        <div class="git-row"><input type="text" name="name" placeholder="Nombre" required /><input type="email" name="email" placeholder="Email" required /></div>
+        <div class="git-row"><input type="tel" name="phone" placeholder="Teléfono" /><input type="text" name="zone" value="Georgia" readonly /></div>
+        <textarea name="message" rows="4" placeholder="Mensaje"></textarea>
+        <button type="submit" class="gbtn light-btn">Enviar <i>＋</i></button>
+        <p class="git-msg" id="gitMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="office" id="office">
+    <div class="office-info">
+      <h2 class="site-title"><strong>Georgia</strong></h2>
+      <p class="office-addr">1770 Indian Trail Lilburn Rd NW, Ste 410<br>Norcross, Georgia 30093</p>
+      <a class="office-phone" href="https://www.instagram.com/calmetrealtygroup/" target="_blank">@calmetrealtygroup</a>
+      <p class="office-hours">Luxury Real Estate &amp; Investments</p>
+      <a href="#contact" class="gbtn">Agendar cita <i>＋</i></a>
+    </div>
+    <div class="office-map">
+      <iframe title="Mapa" loading="lazy" src="https://maps.google.com/maps?q=1770%20Indian%20Trail%20Lilburn%20Rd%20NW%20Norcross%20Georgia%2030093&z=13&output=embed"></iframe>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="index.html" class="footer-brand"><img src="assets/logo.png" alt="Calmet Realty Group" /></a>
+      <nav class="footer-nav">
+        <a href="georgia.html">Georgia</a><a href="florida.html">Florida</a><a href="dubai.html">Dubai</a>
+        <a href="index.html#press">Prensa</a><a href="#contact">Contacto</a>
+      </nav>
+      <div class="footer-social"><a href="https://www.instagram.com/calmetrealtygroup/" target="_blank">IG</a><a href="#">TT</a><a href="#">FB</a></div>
+    </div>
+    <p class="footer-copy">© 2026 Calmet Realty Group · Real Estate · Investments · Relationships</p>
+  </footer>
+
+  <nav class="overlay" id="overlay">
+    <button class="overlay-close" id="overlayClose" aria-label="Cerrar">✕</button>
+    <div class="overlay-inner">
+      <ul class="overlay-nav">
+        <li><a href="index.html#about">Nuestra Historia</a></li>
+        <li><a href="index.html#ceo">Fundador</a></li>
+        <li><a href="index.html#team">Equipo</a></li>
+        <li><a href="#listings">Propiedades</a></li>
+        <li><a href="index.html#press">Prensa</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <div class="overlay-offices">
+        <span class="overlay-label">UBICACIONES</span>
+        <a href="georgia.html">Georgia</a><a href="florida.html">Florida</a><a href="dubai.html">Dubai</a>
+      </div>
+    </div>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
