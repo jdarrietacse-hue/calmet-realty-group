@@ -51,7 +51,12 @@ svg{width:18px;height:18px;fill:currentColor}
 .bar-contact a:hover{color:var(--gold)}
 .bar-contact .dot{color:var(--gold)}
 .brand{position:absolute;left:50%;top:14px;transform:translateX(-50%);display:block}
-.brand img{height:74px;width:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.5))}
+.brand img{height:104px;width:auto;animation:logoGlow 3.6s ease-in-out infinite;
+  filter:drop-shadow(0 0 16px rgba(201,163,78,.5)) drop-shadow(0 4px 16px rgba(0,0,0,.55))}
+@keyframes logoGlow{
+  0%,100%{filter:drop-shadow(0 0 12px rgba(201,163,78,.4)) drop-shadow(0 4px 16px rgba(0,0,0,.55))}
+  50%{filter:drop-shadow(0 0 26px rgba(230,200,120,.85)) drop-shadow(0 4px 16px rgba(0,0,0,.55))}
+}
 .menu-btn{display:flex;align-items:center;gap:12px;background:none;border:none;color:#fff;cursor:pointer;font-family:var(--cond);font-size:1rem;letter-spacing:.28em;text-transform:uppercase;margin-left:auto}
 .menu-bars{display:flex;flex-direction:column;gap:5px;width:28px}
 .menu-bars i{height:2px;width:100%;background:#fff;transition:.3s}
@@ -226,6 +231,7 @@ svg{width:18px;height:18px;fill:currentColor}
   .menu-label{display:none}
   .site-header-inner{padding:8px 20px}
   .sh-brand img{height:38px}
+  .brand img{height:74px}
   .social-rail{left:14px;gap:14px}
   .social-rail:before,.social-rail:after{display:none}
   .loc-rail{right:16px;gap:12px}
