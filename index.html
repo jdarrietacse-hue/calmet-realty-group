@@ -38,6 +38,7 @@
         <span class="dot">•</span>
         <a href="#contact">Contacto</a>
       </div>
+      <a href="#top" class="brand"><img src="assets/logo.png" alt="Calmet Realty Group" /></a>
       <button class="menu-btn" id="menuBtn" aria-label="Menú">
         <span class="menu-bars"><i></i><i></i><i></i></span>
         <span class="menu-label">Menú</span>
@@ -57,11 +58,11 @@
     </ul>
 
     <div class="hero-content">
-      <img class="hero-logo" src="assets/logo.png" alt="Calmet Realty Group" />
-      <p class="hero-eyebrow">REAL ESTATE • INVESTMENTS • RELATIONSHIPS</p>
+      <p class="hero-eyebrow">BIENES RAÍCES DE LUJO · GEORGIA &amp; FLORIDA</p>
+      <h1 class="hero-city" id="heroCity">Georgia</h1>
       <div class="hero-cta">
-        <a href="#listings" class="gbtn">Propiedades <i>＋</i></a>
-        <a href="#ceo" class="gbtn">Conoce a Michel <i>＋</i></a>
+        <a href="#gallery-sec" class="gbtn">Galería <i>＋</i></a>
+        <a href="#team" class="gbtn">Nuestro Equipo <i>＋</i></a>
       </div>
     </div>
 
@@ -79,7 +80,7 @@
       </div>
       <div class="about-right">
         <p><strong>Calmet Realty Group</strong> nace con una misión clara: abrir puertas y crear oportunidades reales para que nuestra comunidad crezca, invierta y alcance el sueño americano.</p>
-        <p>Fundada por <strong>Michel Calmet</strong> —CEO de Kairos Immigration Consulting GA— como la división de bienes raíces que acompaña a las familias latinas no solo en su proceso migratorio, sino en la construcción de patrimonio a través de la compra de su primera casa, propiedades de inversión y educación financiera.</p>
+        <p>Fundada por <strong>Michel Calmet</strong> —CEO de Kairos Immigration Consulting GA— como la división de bienes raíces que acompaña a las familias latinas no solo en su proceso migratorio, sino en la construcción de patrimonio: la compra de su primera casa, propiedades de inversión y educación financiera.</p>
         <p>Más que vender propiedades, construimos relaciones y caminos hacia la riqueza generacional. Bienes raíces de lujo e inversiones en <strong>Georgia</strong> y <strong>Florida</strong>.</p>
         <a href="#ceo" class="gbtn dark">Conoce al fundador <i>＋</i></a>
       </div>
@@ -90,7 +91,7 @@
   <section class="ceo" id="ceo">
     <div class="ceo-inner">
       <div class="ceo-photo">
-        <img src="assets/michel.jpg" alt="Michel Calmet, CEO y Fundador" />
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Michel Calmet, CEO y Fundador" />
       </div>
       <div class="ceo-text">
         <p class="ceo-eyebrow">CEO & FUNDADOR</p>
@@ -102,26 +103,10 @@
     </div>
   </section>
 
-  <!-- ===== SERVICES (tagline) ===== -->
-  <section class="services" id="services">
-    <h2 class="site-title center">Lo que <strong>hacemos</strong></h2>
-    <div class="services-grid">
-      <div class="service reveal">
-        <span class="service-num">01</span>
-        <h3>Real Estate</h3>
-        <p>Compra de tu primera casa y propiedades de lujo en Georgia y Florida, con acompañamiento en cada paso.</p>
-      </div>
-      <div class="service reveal">
-        <span class="service-num">02</span>
-        <h3>Investments</h3>
-        <p>Propiedades de inversión y estrategias para construir patrimonio y riqueza generacional.</p>
-      </div>
-      <div class="service reveal">
-        <span class="service-num">03</span>
-        <h3>Relationships</h3>
-        <p>Servicio honesto y personalizado. Construimos relaciones de confianza a largo plazo con cada familia.</p>
-      </div>
-    </div>
+  <!-- ===== TEAM ===== -->
+  <section class="team" id="team">
+    <h2 class="site-title center">Nuestro <strong>Equipo</strong></h2>
+    <div class="team-grid" id="teamGrid"><!-- JS --></div>
   </section>
 
   <!-- ===== GALLERY ===== -->
@@ -137,17 +122,13 @@
     <div class="center"><a href="#contact" class="gbtn dark">Solicitar información <i>＋</i></a></div>
   </section>
 
-  <!-- ===== PRESS / IN THE MEDIA ===== -->
+  <!-- ===== PRESS / IN THE MEDIA (imagen completa del artículo) ===== -->
   <section class="press" id="press">
     <h2 class="site-title center light">En la <strong>Prensa</strong></h2>
     <p class="press-sub">The Atlanta Journal-Constitution · Mayo 2026</p>
-    <div class="press-card">
-      <a href="#" class="press-img"><img src="assets/article.jpg" alt="Michel Calmet en The Atlanta Journal-Constitution" loading="lazy" /></a>
-      <div class="press-body">
-        <h3>“Michel Calmet, CEO de Kairos Immigration Consulting GA, lanza nueva División de Bienes Raíces para empoderar a la comunidad hispana”</h3>
-        <p>La nueva división ofrece servicios integrales de inmigración y bienes raíces para ayudar a las familias latinas a construir patrimonio, lograr estabilidad y crear un mejor futuro a través de la educación y las inversiones inteligentes.</p>
-        <span class="press-source">— The Atlanta Journal-Constitution</span>
-      </div>
+    <div class="press-figure">
+      <img src="assets/article.jpg" alt="Michel Calmet en The Atlanta Journal-Constitution" id="pressImg" loading="lazy" />
+      <p class="press-caption">Calmet Realty Group en The Atlanta Journal-Constitution — haz clic para ver la nota completa</p>
     </div>
   </section>
 
@@ -192,7 +173,7 @@
     <div class="footer-top">
       <a href="#top" class="footer-brand"><img src="assets/logo.png" alt="Calmet Realty Group" /></a>
       <nav class="footer-nav">
-        <a href="#about">Historia</a><a href="#ceo">Fundador</a><a href="#services">Servicios</a>
+        <a href="#about">Historia</a><a href="#ceo">Fundador</a><a href="#team">Equipo</a>
         <a href="#listings">Propiedades</a><a href="#press">Prensa</a><a href="#contact">Contacto</a>
       </nav>
       <div class="footer-social">
@@ -211,7 +192,7 @@
       <ul class="overlay-nav">
         <li><a href="#about">Nuestra Historia</a></li>
         <li><a href="#ceo">Fundador</a></li>
-        <li><a href="#services">Servicios</a></li>
+        <li><a href="#team">Equipo</a></li>
         <li><a href="#listings">Propiedades</a></li>
         <li><a href="#press">Prensa</a></li>
         <li><a href="#contact">Contacto</a></li>

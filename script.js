@@ -6,10 +6,11 @@ const CITIES = {
 
 // ===== ELEMENTS =====
 const video    = document.getElementById('bgVideo');
+const heroCity = document.getElementById('heroCity');
 const locRail  = document.getElementById('locRail');
 const aboutImg = document.getElementById('aboutImg');
 
-// ===== LOCATION SWITCHER (changes hero video + story image) =====
+// ===== LOCATION SWITCHER (changes hero video + name + story image) =====
 function switchCity(key) {
   const c = CITIES[key];
   if (!c) return;
@@ -22,6 +23,8 @@ function switchCity(key) {
       video.style.opacity = '1';
     }, 300);
   }
+  heroCity.style.opacity = '0';
+  setTimeout(() => { heroCity.textContent = c.name; heroCity.style.opacity = '1'; }, 250);
   aboutImg.src = `https://images.unsplash.com/photo-${c.img}?auto=format&fit=crop&w=900&q=80`;
   locRail.querySelectorAll('li').forEach(li => li.classList.toggle('active', li.dataset.city === key));
 }
@@ -52,6 +55,24 @@ const siteHeader = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
   siteHeader.classList.toggle('show', window.scrollY > window.innerHeight * 0.85);
 });
+
+// ===== TEAM (información de ejemplo — reemplazable) =====
+const team = [
+  { name:'Michel Calmet',  role:'CEO / Fundador',                    img:'1560250097-0b93528c311a' },
+  { name:'Valentina Cruz', role:'Realtor Associate · Georgia',       img:'1573496359142-b8d87734a5a2' },
+  { name:'Marcos Herrera', role:'Realtor Associate · Florida',       img:'1500648767791-00dcc994a43e' },
+  { name:'Sofía Vega',     role:'Especialista en Inversiones',       img:'1494790108377-be9c29b29330' },
+  { name:'Daniel Reyes',   role:'Asesor de Bienes Raíces',           img:'1507003211169-0a1dd7228f2d' },
+  { name:'Camila Ortiz',   role:'Coordinadora de Clientes',          img:'1438761681033-6461ffad8d80' },
+  { name:'Tomás Lara',     role:'Educación Financiera',              img:'1472099645785-5658abf4ff4e' },
+  { name:'Isabella Mora',  role:'Realtor Associate · Georgia',       img:'1544005313-94ddf0286df2' },
+];
+document.getElementById('teamGrid').innerHTML = team.map(m => `
+  <div class="member reveal">
+    <div class="member-img"><img src="https://images.unsplash.com/photo-${m.img}?auto=format&fit=crop&w=500&q=80" alt="${m.name}" loading="lazy"></div>
+    <p class="member-name">${m.name}</p>
+    <p class="member-role">${m.role}</p>
+  </div>`).join('');
 
 // ===== GALLERY =====
 const galleryPhotos = ['1613490493576-7fde63acd811','1564013799919-ab600027ffc6','1600585154340-be6161a56a0c',
@@ -87,7 +108,7 @@ document.getElementById('cards').innerHTML = listings.map(l => `
 const lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightboxImg');
 function openLightbox(src){ lightboxImg.src = src; lightbox.classList.add('open'); }
 document.getElementById('galleryGrid').addEventListener('click', e => { if (e.target.tagName === 'IMG') openLightbox(e.target.src); });
-document.querySelector('.press-img').addEventListener('click', e => { e.preventDefault(); openLightbox('assets/article.jpg'); });
+document.getElementById('pressImg').addEventListener('click', () => openLightbox('assets/article.jpg'));
 document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
 lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
 
